@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/category.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/cookie/js.cookie.min.js"></script>
+    <script src="/js/modalFunctions.js"></script>
+    <script src="/js/axios.min.js"></script>
+    <script src="/js/category.js"></script>
+    <script src="/js/config.js"></script>
+</head>
+<body>
+    <div class="main-container">
+        <div class="quiz-starter-wrapper">
+            <!-- Quizzes -->
+            <div class="quiz-cover">
+                <!-- Timer -->
+                <div class="timer">
+                    <span>20</span>
+                    <div class="timer-wrapper">
+                    </div>
+                </div>
+                <!-- Quiz heree -->
+            </div>
+
+            <!-- Game over -->
+            <div class="game-over-text">
+                <span>Uduzdun!</span>
+            </div>
+
+            <!-- Count Number -->
+            <div class="count-number" id="count-number"></div>
+
+            <!-- Quizzer Box wrapper-->
+            <div class="quiz-making-box">
+
+            </div>
+        </div>
+        <%- include('../parts/header.ejs') -%>
+
+        <!-- About Category -->
+        <div class="about-category-wrapper py-4">
+            <div class="about-category">
+                <div class="info-image d-flex flex-column-reverse flex-md-row align-items-center align-items-md-start">
+                    <div class="info mt-3 mt-md-0 mr-0 mr-md-3">
+                        <div class="category-name mb-1">
+                            <span style="font-size: 18px; border-bottom: 1px solid #efefef;">Cateqoriya adi:</span>
+                            <span id="category-name"></span>
+                        </div>
+                        <div class="correct-point mb-1">
+                            <span style="font-size: 18px; border-bottom: 1px solid #efefef;">Doğru verilən cavab:</span>
+                            <span id="correct-point"></span>
+                        </div>
+                        <div class="wrong-point mb-1">
+                            <span style="font-size: 18px; border-bottom: 1px solid #efefef;">Yanlış verilən cavab:</span>
+                            <span id="wrong-point"></span>
+                        </div>
+                        <div class="star-level mb-1">
+                            <span style="font-size: 18px; border-bottom: 1px solid #efefef;">Çətinlik dərəcəsi:</span>
+                            <span id="difficulty-level"></span>
+                        </div>
+                        <div class="answered-time mb-1">
+                            <span style="font-size: 18px; border-bottom: 1px solid #efefef;">Cavab vermə vaxtı: </span>
+                            <span id="answered-time"></span>
+                        </div>
+                        <div class="biografi mb-1">
+                            <span style="font-size: 18px; border-bottom: 1px solid #efefef;">Cateqoriya haqqinda: </span>
+                            <span id="biografi"></span>
+                        </div>
+                    </div>
+                    <div class="image d-flex justify-content-center" id="category-image">
+
+                    </div>
+                </div>
+                <div class="button py-4">
+                    <button type="button" id="play-quiz">OYNA!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

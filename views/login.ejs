@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/log-reg.css">
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="/js/axios.min.js"></script>
+    <script src="/cookie/js.cookie.min.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/config.js"></script>
+    <title>Daxil ol</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="loading-modal">
+            <img src="/assets/loading.gif" alt="">
+        </div>
+        <div class="reg-log-box">
+            <img src="/assets/text.svg" alt="">
+            <div class="error-box">
+                <span></span>
+                <!-- ERROR TEXT -->
+            </div>
+            <input type="email" placeholder="E-mail" id="log_email">
+            <div class="password">
+                <input type="password" placeholder="Şifrə" id="log_password">
+                <i class="far fa-eye"></i>
+            </div>
+            <span class="yes-no-account">Hələ hesabınız yoxdur? <a href="/register">Register</a></span>
+            <button type="button" id="log-btn">Daxil ol</button>
+        </div>
+    </div>
+</body>
+</html>

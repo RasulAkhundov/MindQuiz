@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Anton', sans-serif;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+}
+/* MAIN CONTAINER */
+.main-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('/assets/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}
+/* LOADING MODAL */
+.loading-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0D253C;
+    z-index: 99999;
+}
+.reg-log-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.reg-log-box .error-box {
+    font-size: 14px;
+    width: 300px;
+    color: red;
+    display: flex;
+    flex-direction: column;
+}
+.error-box span {
+    text-align: left;
+    padding: 5px;
+    color: red;
+}
+.reg-log-box input[type=email], .reg-log-box input[type=text], .reg-log-box input[type=password] {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    border: 0;
+    color: #151515;
+    margin: 10px;
+    transition: 0.3s ease;
+    outline: none;
+}
+.reg-log-box input:hover,
+.reg-log-box input:focus {
+    transform: scale(1.05);
+}
+::placeholder {
+    color: #252525;
+}
+label {
+    margin: 0;
+}
+.reg-log-box .yes-no-account {
+    font-size: 14px;
+    color: #efefef;
+    width: 100%;
+    padding: 0 10px;
+    text-align: right !important;
+}
+.reg-log-box a {
+    font-size: 16px;
+    color: #efefef;
+}
+.reg-log-box .sex {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.sex label {
+    font-size: 16px;
+    color: #efefef;
+}
+.male, .female {
+    display: flex;
+    align-items: center;
+}
+.male {
+    margin-right: 20px;
+}
+.sex input {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+.reg-log-box .password {
+    position: relative;
+}
+.reg-log-box .password i {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    color: rgb(0, 77, 243);
+    font-size: 20px;
+    cursor: pointer;
+}
+.reg-log-box button {
+    margin-top: 20px;
+    padding: 10px 15px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+.reg-log-box button:hover {
+    transform: scale(1.05);
+}

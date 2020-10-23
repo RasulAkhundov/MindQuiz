@@ -1,0 +1,381 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Anton', sans-serif;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+  /* Track */
+::-webkit-scrollbar-track {
+    background: #634207; 
+    border-radius: 0 5px 5px 0;
+}
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: #eca727;
+    border-radius: 0 5px 5px 0;
+}
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #8f5d00; 
+}
+html, body {
+    width: 100%;
+    min-height: 100%;
+}
+.main-container { 
+    width: 100%;
+    min-height: 100%;
+    background: url('/assets/background.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.profile-modal {
+    position: fixed;
+    width: 175px;
+    min-width: 175px;
+    top: 68px;
+    right: 15px;
+    display: none;
+    background: #FFA500;
+    padding: 10px;
+    border-radius: 3px;
+    box-shadow: -2px 2px 4px 0 rgba(0,0,0,.3);
+    z-index: 99999;
+}
+.profile-modal i {
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    font-size: 15px;
+    color: #FFA500;
+}
+.profile-modal .username {
+    width: 100%;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #efefef;
+}
+/* LEVEL */
+.level {
+    width: 100%;
+    padding: 10px 0;
+}
+.level .level-bar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #634207;
+    border: 2px solid #634207;
+    border-radius: 50px;
+    margin-top: 5px;
+    position: relative;
+}
+.level .level-bar .bar-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-radius: 50px;
+    background: rgb(180, 180, 16);
+}
+.level .level-bar .bar-span {
+    margin: 0;
+    color: white;
+    z-index: 2;
+}
+.profile-modal span {
+    margin-bottom: 10px;
+}
+.profile-modal button {
+    width: 100%;
+}
+.profile-modal button:first-child {
+    margin-bottom: 5px;
+}
+
+/* HEADER */
+header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 5px #595a5c;
+}
+.header-cover {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header-comp-1, .header-comp-2 {
+    display: flex;
+    align-items: center;
+}
+header .burger {
+    margin: 20px;
+    cursor: pointer;
+}
+header .burger .line {
+    width: 25px;
+    height: 3px;
+    border-radius: 25px;
+    background: #C7B0AC;
+    margin-bottom: 5px;
+}
+header .burger .line:last-child {
+    margin-bottom: 0;
+}
+header .header-comp-1 a {
+    text-decoration: none;
+}
+header h2 {
+    font-size: 38px;
+    color: orange;
+    margin: 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.header-comp-2 ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.header-comp-2 ul a {
+    text-decoration: none;
+}
+.header-comp-2 ul li {
+    list-style: none;
+    font-size: 16px;
+    color: #FFA500;
+    margin: 0 20px;
+}
+.header-login-text {
+    width: 70px;
+    height: 60px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: #FFA500;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+}
+.header-image-cover {
+    width: 60px;
+    height: 60px;
+    background: #FFA500;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.header-image-cover .header-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    border: 2px solid #efefef;
+}
+
+/* ///PLAY SIDE */
+.play-side {
+    width: 100%;
+    min-height: calc(100vh - 60px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.play-side .game-side-cover {
+    width: 1400px;
+}
+.play-side img {
+    margin-bottom: 20px;
+}
+.play-side .about-profile {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    padding: 10px 0;
+    background: url('/assets/background-2.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 2px solid #efefef;
+    border-radius: 10px;
+    box-shadow: -2px 2px 4px 0 rgba(0,0,0,.3);
+}
+.about-profile .about-profile-image {
+    width: 90px;
+    height: 90px;
+    border: 2px solid #efefef;
+    border-radius: 50px;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    margin-bottom: 5px;
+}
+.about-profile span {
+    font-size: 16px;
+    color: #212529;
+}
+.about-profile .level {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+}
+.play-side .quizez-box {
+    min-height: 100%;
+    background: url('/assets/background-2.png');
+    background-repeat: repeat-y;
+    background-position: center;
+    border: 2px solid #efefef;
+    border-radius: 10px;
+    box-shadow: -2px 2px 4px 0 rgba(0,0,0,.3);
+}
+.quizez-box .header-text {
+    padding: 5px 10px;
+    font-size: 18px;
+    color: #ffffff;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: -2px 2px 4px 0 rgba(0,0,0,.3);
+}
+.header-text img {
+    width: 300px;
+    margin: 0;
+}
+.header-text span {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.quizez-box .quiz-comp {
+    width: 100%;
+    top: -40px;
+    height: 450px;
+    overflow: auto;
+    padding: 20px 0 !important;
+    margin: 0;
+}
+.quizez-box .quiz-comp .quiz {
+    transition: 0.3s ease;
+}
+.quizez-box .quiz-comp .quiz:hover {
+    transform: scale(0.95);
+}
+.quizez-box .quiz-comp-image {
+    width: 100%;
+    height: 125px;
+    margin: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 3px 3px 0 0;
+}
+.quizez-box .quiz-comp .quiz-name {
+    width: 100%;
+    background: #ffffff;
+    text-align: center;
+    padding: 5px;
+    border-radius: 0 0 3px 3px;
+    box-shadow: -2px 2px 4px 0 rgba(0,0,0,.3);
+}
+.quizez-box .quiz-comp .stars {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    display: flex;
+}
+.quiz-comp .stars img {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+}
+@media screen and (max-width: 1400px) {
+    .play-side {
+        min-height: calc(100vh - 60px);
+    }
+    .play-side .game-side-cover {
+        width: 100%;
+        min-height: 60%;
+    }
+    .quizez-box .quiz-comp {
+        overflow-y: auto;
+        height: 450px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .play-side .game-side-cover {
+        min-height: 100%;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    .quizez-box .quiz-comp {
+        height: 100%;
+    }
+    .play-side .about-profile {
+        height: 40%;
+    }
+    .about-profile .about-profile-image {
+        width: 125px;
+        height: 125px;
+        border-radius: 50%;
+    }
+    .about-profile .level {
+        width: 90%;
+    }
+}
+@media screen and (max-width: 650px) {
+    /* HeADER */
+    header .burger {
+        margin: 15px;
+    }
+    header h2 {
+        font-size: 30px;
+    }
+    header .header-comp-2 ul a {
+        display: none;
+    }
+    header .header-comp-2 ul .leader-board-a {
+        display: flex;
+    }
+    header .header-comp-2 ul li {
+        margin: 0 10px;
+    }
+    .header-login-text {
+        width: 70px;
+        height: 60px;
+    }
+    .about-profile .about-profile-image {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+    }
+    .about-profile .level {
+        width: 100%;
+    }
+    .quizez-box .header-text {
+        font-size: 16px;
+    }
+    .quizez-box .header-text img {
+        width: 200px;
+    }
+}

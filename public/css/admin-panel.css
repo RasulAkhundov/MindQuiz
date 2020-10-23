@@ -1,0 +1,308 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Anton', sans-serif;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+  /* Track */
+::-webkit-scrollbar-track {
+    background: #634207; 
+    border-radius: 0 5px 5px 0;
+}
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: #eca727;
+    border-radius: 0 5px 5px 0;
+}
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #8f5d00; 
+}
+html, body {
+    width: 100%;
+    height: 100%;
+}
+.main-container { 
+    width: 100%;
+    height: 100%;
+    background: url('/assets/background.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+/* LOADING MODAL */
+.loading-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0D253C;
+    z-index: 99999;
+}
+.profile-modal {
+    position: fixed;
+    top: 68px;
+    right: 15px;
+    display: none;
+    background: #FFA500;
+    padding: 10px;
+    border-radius: 3px;
+    box-shadow: -2px 2px 4px 0 rgba(0,0,0,.3);
+    z-index: 99999;
+}
+.profile-modal i {
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    font-size: 15px;
+    color: #FFA500;
+}
+.profile-modal .username {
+    width: 100%;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #efefef;
+}
+/* LEVEL */
+.level {
+    width: 100%;
+    padding: 10px 0;
+}
+.level .level-bar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #634207;
+    border: 2px solid #634207;
+    border-radius: 50px;
+    margin-top: 5px;
+    position: relative;
+}
+.level .level-bar .bar-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-radius: 50px;
+    background: rgb(180, 180, 16);
+}
+.level .level-bar .bar-span {
+    margin: 0;
+    color: white;
+    z-index: 2;
+}
+.profile-modal span {
+    margin-bottom: 10px;
+}
+.profile-modal button {
+    width: 100%;
+}
+.profile-modal button:first-child {
+    margin-bottom: 5px;
+}
+/* HEADER */
+header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 0 5px #595a5c;
+}
+.header-cover {
+    width: 1400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header-comp-1, .header-comp-2 {
+    display: flex;
+    align-items: center;
+}
+header .burger {
+    margin: 20px;
+    cursor: pointer;
+}
+header .burger .line {
+    width: 25px;
+    height: 3px;
+    border-radius: 25px;
+    background: #C7B0AC;
+    margin-bottom: 5px;
+}
+header .burger .line:last-child {
+    margin-bottom: 0;
+}
+header .header-comp-1 a {
+    text-decoration: none;
+}
+header h2 {
+    font-size: 38px;
+    color: orange;
+    margin: 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.header-comp-2 ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.header-comp-2 ul a {
+    text-decoration: none;
+}
+.header-comp-2 ul li {
+    list-style: none;
+    font-size: 16px;
+    color: #FFA500;
+    margin: 0 20px;
+}
+.header-login-text {
+    width: 70px;
+    height: 60px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: #FFA500;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+}
+.header-image-cover {
+    width: 60px;
+    height: 60px;
+    background: #FFA500;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.header-image-cover .header-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    border: 2px solid #efefef;
+}
+
+/* CREATE SIDE */
+.create-side-row {
+    height: calc(100% - 60px);
+    padding: 100px;
+    align-items: center;
+    justify-content: center;
+}
+.create-side {
+    width: 1200px;
+    height: 100%;
+    background: url('/assets/background-2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+    overflow: auto;
+}
+/* CREATE CATEGORY */
+.create-category, .create-quiz {
+    width: 100%;
+    padding: 10px 10px 0;
+}
+.create-quiz {
+    padding-top: 0;
+}
+.create-side h2, .create-side h5 {
+    width: 100%;
+    padding: 10px;
+    border-bottom: 2px solid #ffffff;
+    font-size: 22px;
+    color: white;
+}
+.create-side h5 {
+    font-size: 18px;
+}
+.create-side label {
+    font-size: 16px;
+    color: white;
+}
+.input-comp-box {
+    width: 100%;
+}
+.create-side input, .create-side select, .create-side textarea {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border-radius: 3px;
+    background: #ffffff;
+    border: 0;
+    margin-bottom: 5px;
+}
+.create-side input[type=radio] {
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+}
+.create-side textarea {
+    min-height: 50px;
+    height: 50px;
+    min-width: 100%;
+}
+.create-side button {
+    padding: 7px 13px;
+    outline: none;
+}
+
+/* CREATE QUIZ */
+@media screen and (max-width: 1200px) {
+    .create-side {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 700px) {
+    /* HeADER */
+    .create-category {
+        padding: 15px;
+    }
+    .create-side-row {
+        padding: 20px;
+    }
+    .image-name,
+    .level-xp,
+    .image-category,
+    .quiz-question,
+    .category-biografi,
+    .a-b,
+    .c-d {
+        flex-direction: column;
+    }
+}
+@media screen and (max-width: 650px) {
+    /* HeADER */
+    header .burger {
+        margin: 15px;
+    }
+    header h2 {
+        font-size: 30px;
+    }
+    header .header-comp-2 ul {
+        display: none;
+    }
+    .header-login-text {
+        width: 70px;
+        height: 50px;
+    }
+}

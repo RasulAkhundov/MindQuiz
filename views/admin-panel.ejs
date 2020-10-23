@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/admin-panel.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/cookie/js.cookie.min.js"></script>
+    <script src="/js/modalFunctions.js"></script>
+    <script src="/js/axios.min.js"></script>
+    <script src="/js/admin-panel.js"></script>
+    <script src="/js/config.js"></script>
+    <title>Admin Panel</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="loading-modal">
+            <img src="/assets/loading.gif" alt="">
+        </div>
+        <%- include('../parts/header.ejs') -%>
+        <div class="row m-0 create-side-row">
+            <div class="create-side">
+                <div class="create-category">
+                    <h2>Kateqoriya yarad:</h2>
+                    <div class="image-name mb-0 mb-sm-3 px-0 px-sm-3 d-flex">
+                        <div class="category-image mr-0 mr-sm-3 d-flex flex-column input-comp-box">
+                            <label for="category-image">Şəkil əlavə et:</label>
+                            <input type="file" id="create-category-image" name="category-image">
+                        </div>
+                        <div class="category-name d-flex flex-column input-comp-box">
+                            <label for="category-name">Başlıq əlavə et: AZ</label>
+                            <input type="text" id="create-category-name-az" placeholder="AZ" name="category-name">
+                            <label for="category-name">Başlıq əlavə et: EN</label>
+                            <input type="text" id="create-category-name-en" placeholder="EN" name="category-name">
+                            <label for="category-name">Başlıq əlavə et: RU</label>
+                            <input type="text" id="create-category-name-ru" placeholder="RU" name="category-name">
+                        </div>
+                    </div>
+                    <div class="level-xp px-0 px-sm-3 d-flex">
+                        <div class="category-level mr-0 mr-sm-3 d-flex flex-column input-comp-box">
+                            <label for="category-level">Dərəcə əlavə et:</label>
+                            <select name="category-level" id="create-category-level">
+                                <option value=""></option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                        <div class="category-xp d-flex flex-column input-comp-box">
+                            <label for="category-xp">Xp əlavə et:</label>
+                            <select name="category-xp" id="create-category-xp">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="15">15</option>
+                                <option value="20">20</option>
+                                <option value="30">30</option>
+                                <option value="50">50</option>
+                            </select>
+                        </div>
+                    </div>
+                    <h5 class="px-0 px-sm-3">Kategoriya bioqrafiyasi:</h5>
+                    <div class="category-biografi px-0 px-sm-3 d-flex">
+                        <div class="az mr-0 mr-sm-3 d-flex flex-column input-comp-box">
+                            <label for="az-biografi">Bioqrafia: AZ</label>
+                            <textarea placeholder="AZ" id="create-biografi-az" name="az-biografi"></textarea>
+                        </div>
+                        <div class="en mr-0 mr-sm-3 d-flex flex-column input-comp-box">
+                            <label for="en-biografi">Bioqrafia: EN</label>
+                            <textarea placeholder="EN" id="create-biografi-en" name="en-biografi"></textarea>
+                        </div>
+                        <div class="ru d-flex flex-column input-comp-box">
+                            <label for="ru-biografi">Bioqrafia: RU</label>
+                            <textarea placeholder="RU" id="create-biografi-ru" name="ru-biografi"></textarea>
+                        </div>
+                    </div>
+                    <div class="button d-flex justify-content-end py-3 px-0 px-sm-3">
+                        <button type="button" id="create-category-btn">Yarad</button>
+                    </div>
+                </div>
+                <div class="create-quiz">
+                    <h2>Quiz yarad:</h2>
+                    <div class="image-category mb-0 mb-sm-3 px-0 px-sm-3 d-flex">
+                        <div class="quiz-image mr-0 mr-sm-3 d-flex flex-column input-comp-box">
+                            <label for="quiz-image">Şəkil əlavə et:</label>
+                            <input type="file" id="create-quiz-image" name="quiz-image">
+                        </div>
+                        <div class="quiz-category d-flex flex-column input-comp-box">
+                            <label for="quiz-category">Kateqoriya seç:</label>
+                            <select name="quiz-category" id="create-quiz-category">
+                                <option value=""></option>
+                                <!-- quiz create category heree -->
+                            </select>
+                        </div>
+                    </div>
+                    <h5 class="px-0 px-sm-3">3 Dildə quiz sualı yarad:</h5>
+                    <div class="category-biografi px-0 px-sm-3 d-flex">
+                        <div class="az mr-0 mr-sm-3 d-flex flex-column input-comp-box">
+                            <label for="az-question">Quiz Suali: AZ</label>
+                            <textarea placeholder="AZ" id="quiz-question-az" name="az-question"></textarea>
+                        </div>
+                        <div class="en mr-0 mr-sm-3 d-flex flex-column input-comp-box">
+                            <label for="en-question">Quiz Suali: EN</label>
+                            <textarea placeholder="EN" id="quiz-question-en" name="en-question"></textarea>
+                        </div>
+                        <div class="ru d-flex flex-column input-comp-box">
+                            <label for="ru-question">Quiz Suali: RU</label>
+                            <textarea placeholder="RU" id="quiz-question-ru" name="ru-question"></textarea>
+                        </div>
+                    </div>
+                    <h5 class="px-0 px-sm-3">A, B, C, D bəndinin cavablarini daxil et:</h5>
+                    <div class="quiz-answer px-0 px-sm-3">
+                        <div class="a-b d-flex">
+                            <div class="a mr-0 mr-sm-3 d-flex flex-column input-comp-box">
+                                <label for="answer-a">Cavab: A</label>
+                                <textarea placeholder="Cavab A: AZ" id="quiz-answer-a-az" name="answer-a"></textarea>
+                                <textarea placeholder="Cavab A: EN" id="quiz-answer-a-en" name="answer-a"></textarea>
+                                <textarea placeholder="Cavab A: RU" id="quiz-answer-a-ru" name="answer-a"></textarea>
+                            </div>
+                            <div class="b d-flex flex-column input-comp-box">
+                                <label for="answer-b">Cavab: B</label>
+                                <textarea placeholder="Cavab B: AZ" id="quiz-answer-b-az" name="answer-b"></textarea>
+                                <textarea placeholder="Cavab B: EN" id="quiz-answer-b-en" name="answer-b"></textarea>
+                                <textarea placeholder="Cavab B: RU" id="quiz-answer-b-ru" name="answer-b"></textarea>
+                            </div>
+                        </div>
+                        <div class="c-d d-flex">
+                            <div class="c mr-0 mr-sm-3 d-flex flex-column input-comp-box">
+                                <label for="answer-c">Cavab: C</label>
+                                <textarea placeholder="Cavab C: AZ" id="quiz-answer-c-az" name="answer-c"></textarea>
+                                <textarea placeholder="Cavab C: EN" id="quiz-answer-c-en" name="answer-c"></textarea>
+                                <textarea placeholder="Cavab C: RU" id="quiz-answer-c-ru" name="answer-c"></textarea>
+                            </div>
+                            <div class="d d-flex flex-column input-comp-box">
+                                <label for="answer-d">Cavab: D</label>
+                                <textarea placeholder="Cavab D: AZ" id="quiz-answer-d-az" name="answer-d"></textarea>
+                                <textarea placeholder="Cavab D: EN" id="quiz-answer-d-en" name="answer-d"></textarea>
+                                <textarea placeholder="Cavab D: RU" id="quiz-answer-d-ru" name="answer-d"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <h5 class="px-0 px-sm-3">Doğru bəndi seç:</h5>
+                    <div class="choose-correct-answer p-3 d-flex justify-content-around">
+                        <div class="a d-flex justify-content-center input-comp-box">
+                            <input type="radio" value="A" id="correct-answer-a" name="correctAnswer">
+                            <label for="correctAnswer">A</label>
+                        </div>
+                        <div class="b d-flex justify-content-center input-comp-box">
+                            <input type="radio" value="B" id="correct-answer-b" name="correctAnswer">
+                            <label for="correctAnswer">B</label>
+                        </div>
+                        <div class="c d-flex justify-content-center input-comp-box">
+                            <input type="radio" value="C" id="correct-answer-c" name="correctAnswer">
+                            <label for="correctAnswer">C</label>
+                        </div>
+                        <div class="d d-flex justify-content-center input-comp-box">
+                            <input type="radio" value="D" id="correct-answer-d" name="correctAnswer">
+                            <label for="correctAnswer">D</label>
+                        </div>
+                    </div>
+                    <div class="button d-flex justify-content-end py-3 px-0 px-sm-3">
+                        <button type="button" id="create-quiz-btn">Yarad</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

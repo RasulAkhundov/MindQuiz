@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/leader-board.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/cookie/js.cookie.min.js"></script>
+    <script src="/js/modalFunctions.js"></script>
+    <script src="/js/axios.min.js"></script>
+    <script src="/js/leader-board.js"></script>
+    <script src="/js/config.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="main-container">
+        <%- include('../parts/header.ejs') -%>
+        <!-- board wrapper -->
+        <div class="board-wrapper">
+            <div class="board">
+                <h2 class="header-text">Lider lövhəsi</h2>
+                <div class="table-scroll">
+                    <table class="player-table" id="player-table">
+                        <!-- leader players here -->
+                    </table>
+                </div>
+                <!-- Player me -->
+                <div class="player-me">
+                    <table class="player-table">
+                        <tr>
+                            <td class="player-length"></td>
+                            <td class="player-image"><img src="/assets/user-image/male/0.svg" alt=""></td>
+                            <td class="player-name"></td>
+                            <td class="player-cup-image"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

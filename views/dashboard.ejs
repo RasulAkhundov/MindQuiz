@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/cookie/js.cookie.min.js"></script>
+    <script src="/js/modalFunctions.js"></script>
+    <script src="/js/axios.min.js"></script>
+    <script src="/js/dashboard.js"></script>
+    <script src="/js/config.js"></script>
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="main-container">
+        <%- include('../parts/header.ejs') -%>
+        <div class="play-side d-flex flex-column">
+            <!-- <img src="/assets/text.svg" alt=""> -->
+            <div class="row m-0 py-3 align-items-start justify-content-center game-side-cover">
+                <div class="col-10 col-sm-7 col-md-3 mr-0 mr-md-4 mb-3 mb-md-0 about-profile">
+                    <div class="about-profile-image"></div>
+                    <span id="about-profile-name">Rasul Akhundov</span>
+                    <div class="level">
+                        <span class="label"></span>
+                        <div class="level-bar">
+                            <div class="bar-cover"></div>
+                            <span class="bar-span"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-11 col-md-7 p-0 quizez-box">
+                    <div class="header-text">
+                        <img src="/assets/header-text-background.png" alt="">
+                        <span>Quiz'lər</span>
+                    </div>
+                    <div class="row p-0 quiz-comp" id="dash-category-comp">
+                        <!-- Categories is hereee-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

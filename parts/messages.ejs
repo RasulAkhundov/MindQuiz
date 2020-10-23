@@ -1,0 +1,6 @@
+<!-- REGISTER -->
+<% if(typeof msg != 'undefined') { %>
+    <% msg.forEach(function(error) { %>
+        <span><%= error.msg %></span>
+    <% }); %>
+<% } %>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/log-reg.css">
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="/cookie/js.cookie.min.js"></script>
+    <script src="/js/axios.min.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/config.js"></script>
+    <title>Qeydiyyat</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="loading-modal">
+            <img src="/assets/loading.gif" alt="">
+        </div>
+        <div class="reg-log-box">
+            <img src="/assets/text.svg" alt="">
+            <%- include('../parts/messages.ejs') -%>
+            <div class="error-box">
+                <span></span>
+                <!-- ERROR TEXT -->
+            </div>
+            <input type="email" placeholder="E-mail" id="reg_email">
+            <input type="text" placeholder="İstifadeçi Adı" id="reg_username" maxlength="20">
+            <div class="password">
+                <input type="password" placeholder="Şifrə" id="reg_password">
+                <i class="far fa-eye"></i>
+            </div>
+            <!-- <input type="date" placeholder="Doğum günü" id="reg_birthday"> -->
+            <div class="sex">
+                <div class="male">
+                    <input type="radio" id="male" name="gender" value="Male">
+                    <label for="male">Male</label>
+                </div>
+                <div class="female">
+                    <input type="radio" id="female" name="gender" value="Female">
+                    <label for="female">Female</label>
+                </div>
+            </div>
+            <span class="yes-no-account">Artıq bir hesabınız var? <a href="/login">Daxil ol</a></span>
+            <button type="button" id="reg-btn">Qeydiyyat</button>
+        </div>
+    </div>
+</body>
+</html>
