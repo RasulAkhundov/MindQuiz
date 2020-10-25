@@ -192,6 +192,93 @@ html, body {
     background: linear-gradient(to bottom, #00b300 5%, #006700 100%);
     position: relative;
 }
+/* QUIZ RESULT PROFILE */
+.quiz-res-profile {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    flex-direction: column;
+}
+.quiz-res-profile h2 {
+    font-size: 38px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+}
+.quiz-res-profile .about-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 200px;
+    padding: 10px 0;
+    background: url('/assets/background-2.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 2px solid #efefef;
+    border-radius: 10px;
+    box-shadow: -2px 2px 4px 0 rgba(0,0,0,.3);
+    transform: scale(0);
+}
+.quiz-res-profile .about-profile .about-profile-image {
+    width: 90px;
+    height: 90px;
+    border: 2px solid #efefef;
+    border-radius: 50px;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    margin-bottom: 5px;
+}
+.quiz-res-profile .about-profile span {
+    font-size: 16px;
+    color: #212529;
+}
+.quiz-res-profile .about-profile .level {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+}
+.quiz-res-profile .buttons {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+@keyframes quiz_result_profile {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.quiz-res-profile .buttons button {
+    width: 45%;
+    height: 40px;
+    border-radius: 50px;
+    background: #ffbf00;
+    font-size: 18px;
+    color: #002043;
+    border: 0;
+    border-bottom: 2px solid #f88700;
+    border-top: 2px solid #ffe100;
+    box-shadow: 0 0 0 5px #002043, 0 0 0 6px #7c92b0;
+    outline: none;
+    font-family: 'Nunito Sans', sans-serif;
+    transform: scale(0);
+}
+.quiz-res-profile .buttons button:hover {
+    transition: 0.2s ease;
+    transform: scale(0.95);
+}
+.quiz-res-animation {
+    animation: quiz_result_profile 0.3s linear forwards;
+}
 
 /* Profile modal */
 .profile-modal {

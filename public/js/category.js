@@ -30,11 +30,19 @@ $(document).ready(async function() {
     let timeTickingSnd = new Audio('/assets/sounds/clock-ticking.wav');
     //Start Count Sound
     let countSnd = new Audio('/assets/sounds/count-sound.wav');
+    //won Sound
+    let wonSnd = new Audio('/assets/sounds/cheer-sound.wav');
+
+    let second = 20;
+
+    let gameCountDown;
+
+    //Getting Quiz Data
+    let quizLength = 0;
 
     ////////////////////////////
     //getting quiz
     //////////////////////////
-    let second = 20;
     $('#play-quiz').click(async function() {
 
         setTimeout(function() {
@@ -65,7 +73,7 @@ $(document).ready(async function() {
             timeTickingSnd.play();
 
             //Quiz timer count down interval
-            setInterval(function() {
+            gameCountDown = setInterval(function() {
                 second -= 1;
                 // giving time to span
                 $(".quiz-starter-wrapper .timer span").text(second);
@@ -104,19 +112,14 @@ $(document).ready(async function() {
 
                     //timer display none
                     $(".quiz-starter-wrapper .timer").css('display', 'none');
+
                     //game over text display flex
-                    $(".game-over-text").css('display', 'flex');
-                    //quiz box dislay none
-                    $(".quiz-starter-wrapper .quiz-cover").css('display', 'none');
-                    setTimeout(function() {
-                        window.location.reload()
-                    }, 2000)
+                    gameOver();
+
+                    getXp();
                 }
             }, 1000);
         }, 4500);
-
-        //Getting Quiz Data
-        let quizLength = 0;
 
         let quizData = await axios.get(`${window.development}/api/get-quiz/${categoryGet.nameAz}`).then(res => res.data.quizData);
 
@@ -203,16 +206,65 @@ $(document).ready(async function() {
                 }, 500);
 
                 if(quizLength === 5) {
-                    console.log("ewfew")
                     timeTickingSnd.pause();
+                    
+                    //removing second for counting
+                    clearInterval(gameCountDown);
+
+                    //won sound
+                    wonSnd.play();
 
                     //timer display none
                     $(".quiz-starter-wrapper .timer").css('display', 'none');
+
+                    ///QUIZ RESULT PROFILE AND ANIMATION
+                    wonGame();
+
+                    getXp();
                 }
             } else {
                 console.log("no")
+                getXp();
             }
         })
         console.log(quizData);
+
+        //GAME OVER FUNCTION
+        function gameOver() {
+            $(".quiz-res-profile").css("display", 'flex');
+            $(".quiz-res-profile h2").text('Uduzdun!');
+            setTimeout(() => {
+                $(".quiz-res-profile .about-profile").addClass('quiz-res-animation');
+            }, 200);
+            setTimeout(() => {
+                $(".quiz-res-profile button:first-child").addClass('quiz-res-animation');
+            }, 400);
+            setTimeout(() => {
+                $(".quiz-res-profile button:last-child").addClass('quiz-res-animation');
+            }, 600);
+            //quiz box dislay none
+            $(".quiz-starter-wrapper .quiz-cover").css('display', 'none');
+        }
+
+        //GAME WON FUNCTION
+        function wonGame() {
+            $(".quiz-res-profile").css("display", 'flex');
+            $(".quiz-res-profile h2").text('Qazandin!');
+            setTimeout(() => {
+                $(".quiz-res-profile .about-profile").addClass('quiz-res-animation');
+            }, 200);
+            setTimeout(() => {
+                $(".quiz-res-profile button:first-child").addClass('quiz-res-animation');
+            }, 400);
+            setTimeout(() => {
+                $(".quiz-res-profile button:last-child").addClass('quiz-res-animation');
+            }, 600);
+        }
+
+        ///GETTING XP
+        function getXp() {
+            let xp = categoryGet.xp * quizLength;
+            console.log(xp);
+        }
     })
 })
